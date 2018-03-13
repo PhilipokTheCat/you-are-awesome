@@ -51,7 +51,7 @@ const getDeepPropertiesCount = (obj) => {
     }
     return sum;
 };
-const createSerializedObject = () => {return Object.getPrototypeOf({})};
+const createSerializedObject = () => {return null};
 
 const isProtoLower = (first, second) => {
     if (Object.getOwnPropertyNames(first.__proto__).length === 0)
@@ -63,7 +63,6 @@ const sortByProto = (arr) => {
     let temp;
     for (let i = 0; i < arr.length; i++){
         for (let j = 0; j < arr.length-1; j++){
-            console.log(arr[j], arr[j+1])
             if (!isProtoLower(arr[j], arr[j+1])){
                 temp = arr[j];
                 arr[j] = arr[j+1];
